@@ -84,11 +84,13 @@ If an error like ```No module named pypyant``` pops up, then the installation wa
    
    #Add an invoice for an existing user
    invoice.add(client_id=1,due_date="12/30/2016",fee_bearer="client",
-                items={
-                        "name": "Website Design",
+                items=[{
+                        "item": "Website Design",
                         "description": "5 Pages Website plus 1 Year Web Hosting",
                         "unit_cost": "50000.00",
-                        "quantity": "1")
+                        "quantity": "1"
+                        }]
+                        )
    
    #Add an invoice for a new user
    client = {
@@ -101,12 +103,13 @@ If an error like ```No module named pypyant``` pops up, then the installation wa
             "address": "Wase II"
             }
    invoice.add(new=True, client, due_date="12/30/2016",fee_bearer="client",
-                  items={
-                        "name": "Website Design",
+                  items=[{
+                        "item": "Website Design",
                         "description": "5 Pages Website plus 1 Year Web Hosting",
                         "unit_cost": "50000.00",
                         "quantity": "1" 
-                        }
+                        }]
+                        )
     
     
    #Get an invoice
